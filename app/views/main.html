@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <button class="btn">Generate Lunch Group Member Lists</button>
+  <ul ng-repeat="lunchGroup in lunchGroups">
+    <h2>Group {{$index + 1}}</h2>
+    <li ng-repeat="person in lunchGroup">{{person.firstName}} {{person.lastName}}</li>
+  </ul>
+</div>
