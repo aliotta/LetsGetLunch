@@ -6,6 +6,7 @@ var express         = require('express');
 var http            = require('http');
 var app             = express();
 var bodyParser      = require('body-parser');
+var knex            = require('knex');
 
 // =======================
 // configuration =========
@@ -20,6 +21,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/' + clientPath));
+
+var dbConfig = require('./db/config');
+
+//create database connection
+var knex = require('knex')({
+    client: 'pg',
+    connection: dbConfig,
+    pool: {
+        min: 0,
+        max: 5
+    }
+});
+
+app.set('knex', knex);
 
 // =======================
 // start the server ======

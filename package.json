@@ -39,5 +39,9 @@
   },
   "scripts": {
     "test": "karma start test/karma.conf.js"
+  },
+  "dependencies": {
+    "knex": "^0.13.0",
+    "pg": "^6.2.2"
   }
 }
