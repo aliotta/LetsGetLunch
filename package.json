@@ -40,7 +40,7 @@
   },
   "scripts": {
     "migrate": "node ./db/migrate",
-    "test": "karma start test/karma.conf.js"
+    "test": "mocha --timeout 30000 test/backend_tests/*.js"
   },
   "dependencies": {
     "bluebird": "^3.5.0",

@@ -6,23 +6,23 @@ var UserController = function(app) {
 };
 
 UserController.prototype.getRandom = function() {
-  //TODO the below balancing implementation works uniquely well for groups of 5 with a minimum group size of 3
-  // if these requirements were to change the process will need to be changed
   var minimumGroupSize = 3;
+  var maximumGroupSize = 5;
   return this.knex('Users').select('first_name as firstName', 'last_name as lastName')
   .then((users) => {
     numberOfUsers = users.length;
-    return _.chunk(_.shuffle(users),5); //shuffle the users and put them in groups of 5
+    return _.shuffle(users); //shuffle the users
   })
-  .then((userGroups) => {
-    var count = 0;
-    var numberOfGroups = userGroups.length;
-    if (userGroups[userGroups.length -1].length < minimumGroupSize){
-      var mergedArray = _.concat(userGroups.pop(), userGroups.pop());
-      var chunkedArrays = _.chunk(mergedArray, Math.floor(mergedArray.length/2));
+  .then((users) => {
+    var userGroups = [];
+    var numberOfBuckets = Math.ceil(users.length/maximumGroupSize);
+    for (var i = 0; i < numberOfBuckets; i++) {
+      userGroups.push([]);
+    };
 
-      return _.concat(userGroups,chunkedArrays);
-    }
+    for (var j = 0; j < users.length; j++) {
+      userGroups[j % numberOfBuckets].push(users[j]);
+    };
     return userGroups;
   });
 };

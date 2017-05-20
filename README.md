@@ -22,4 +22,7 @@ Run `grunt` for building and `grunt serve` for preview.
 
 Running `grunt test` will run the unit tests with karma.
 
-Running `npm test` will run the server side unit tests
+Running `npm run test` will run the server side unit tests
+
+    //"test": "karma start test/karma.conf.js",
+
