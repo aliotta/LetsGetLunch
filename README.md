@@ -1,5 +1,8 @@
 # appartment-list-lunch-app
 
+Built using yeoman angular-generator with a node.js server and a postgres database.
+Testing of the front end code was completed using karma and backend code using mocha.
+
 ## Build & development
 
 Must have a postgres database setup with the following properties and user
