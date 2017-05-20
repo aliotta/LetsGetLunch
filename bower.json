@@ -11,7 +11,7 @@
     "angular-route": "^1.6.4"
   },
   "appPath": "app",
-  "moduleName": "appartmentListLunchAppApp",
+  "moduleName": "appartmentListLunchApp",
   "overrides": {
     "bootstrap": {
       "main": [

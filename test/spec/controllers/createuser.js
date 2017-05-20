@@ -1,19 +1,23 @@
 'use strict';
 
-describe('Controller: UserCtrl', function () {
+describe('Controller: CreateuserCtrl', function () {
 
   // load the controller's module
   beforeEach(module('appartmentListLunchApp'));
 
-  var UserCtrl,
+  var CreateuserCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    UserCtrl = $controller('UserCtrl', {
+    CreateuserCtrl = $controller('CreateuserCtrl', {
       $scope: scope
       // place here mocked dependencies
     });
   }));
+
+  it('should attach a list of awesomeThings to the scope', function () {
+    expect(CreateuserCtrl.awesomeThings.length).toBe(3);
+  });
 });

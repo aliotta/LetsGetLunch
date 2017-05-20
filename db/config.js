@@ -1,5 +1,6 @@
 var dbConfig = {
-    database: 'appt',
+    database: 'postgres',
+    schema: 'appt',
     user: 'postgres',
     password: 'cheese',
     host: 'localhost',

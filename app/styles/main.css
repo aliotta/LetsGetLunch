@@ -55,6 +55,11 @@ li {
   padding: 14px 24px;
 }
 
+.btn {
+  color: white;
+  background-color:#00adf2;
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;

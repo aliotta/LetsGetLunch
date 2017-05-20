@@ -3,11 +3,10 @@
     function ApiCalls($http, $location) {
 
         var service = {
-            doPromiseCall: doPromiseCall
+            doApiCall: doApiCall
         };
 
-
-        function doPromiseCall(url, type, data) {
+        function doApiCall(url, type, data) {
             var headersObj = {};
             if (url.charAt(0) !== '/') {
                 url = '/' + url;
@@ -19,10 +18,7 @@
                 data: data
             };
 
-            return $http(config)
-            .catch(function(err) {
-                console.log('error', err);
-            });
+            return $http(config);
         }
 
         return service;
@@ -32,7 +28,7 @@
     ApiCalls.$inject = ['$http', '$location'];
 
     angular
-    .module('appartmentListLunchAppApp')
+    .module('appartmentListLunchApp')
     .factory('ApiCalls', ApiCalls);
 
 }());

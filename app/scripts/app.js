@@ -2,24 +2,25 @@
 
 /**
  * @ngdoc overview
- * @name appartmentListLunchAppApp
+ * @name appartmentListLunchApp
  * @description
- * # appartmentListLunchAppApp
+ * # appartmentListLunchApp
  *
  * Main module of the application.
  */
-var app = angular.module('appartmentListLunchAppApp', ['ngRoute']);
+var app = angular.module('appartmentListLunchApp', ['ngRoute']);
 app.config(function($routeProvider ,$locationProvider) {
   $locationProvider.hashPrefix('');
   $routeProvider
+  .when('/user/create', {
+    templateUrl: 'views/createuser.html',
+    controller: 'CreateUserCtrl'
+  })
   .when('/about', {
-    templateUrl: 'views/about.html',
-    controller: 'AboutCtrl',
-    controllerAs: 'about'
+    templateUrl: 'views/about.html'
   })
   .when('/', {
     templateUrl: 'views/main.html',
-    controller: 'MainCtrl',
-    controllerAs: 'main'
+    controller: 'MainCtrl'
   });
 });

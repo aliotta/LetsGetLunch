@@ -27,11 +27,7 @@ var dbConfig = require('./db/config');
 //create database connection
 var knex = require('knex')({
     client: 'pg',
-    connection: dbConfig,
-    pool: {
-        min: 0,
-        max: 5
-    }
+    connection: dbConfig
 });
 
 app.set('knex', knex);

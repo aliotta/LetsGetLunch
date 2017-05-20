@@ -38,10 +38,13 @@
     "node": ">=0.10.0"
   },
   "scripts": {
+    "migrate": "node ./db/migrate",
     "test": "karma start test/karma.conf.js"
   },
   "dependencies": {
+    "bluebird": "^3.5.0",
     "knex": "^0.13.0",
+    "lodash": "^4.17.4",
     "pg": "^6.2.2"
   }
 }
