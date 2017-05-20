@@ -18,6 +18,7 @@ describe('Controller: MainCtrl', function () {
       getLunchGroups: function(){
         getLunchGroupsCallCount++;
         var deferred = $q.defer();
+        deferred.resolve('Remote call result');
         return deferred.promise;
       }
     }
