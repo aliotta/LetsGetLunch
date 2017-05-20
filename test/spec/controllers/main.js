@@ -5,24 +5,31 @@ describe('Controller: MainCtrl', function () {
   // load the controller's module
   beforeEach(module('appartmentListLunchApp'));
 
-  var MainCtrl,
-    scope;
+  var MainCtrl;
+  var scope;
+  var mockUserData = {data : [[{firstName: 'CLIENT', lastName: 'SIDE'}, {firstName: 'Rob', lastName: 'W'}], [{firstName: 'Peter', lastName: 'Parker'},{firstName: 'Marquis', lastName: 'L'}],[{firstName: 'Mary', lastName: 'K'},{firstName: 'Beth', lastName: 'B'}, {firstName: 'Sam', lastName: 'Smith'}]]};
+  var getLunchGroupsCallCount = 0;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, $q) {
+    getLunchGroupsCallCount = 0;
     scope = $rootScope.$new();
-    var mockUserData = {data : [[{firstName: 'CLIENT', lastName: 'SIDE'}, {firstName: 'Rob', lastName: 'W'}], [{firstName: 'Peter', lastName: 'Parker'},{firstName: 'Marquis', lastName: 'L'}],[{firstName: 'Mary', lastName: 'K'},{firstName: 'Beth', lastName: 'B'}, {firstName: 'Sam', lastName: 'Smith'}]]};
-    scope.doApiCall = function(){
-      return mockUserData;
-    };
+    var UserService = {
+      getLunchGroups: function(){
+        getLunchGroupsCallCount++;
+        var deferred = $q.defer();
+        return deferred.promise;
+      }
+    }
     MainCtrl = $controller('MainCtrl', {
-      $scope: scope
+      $scope: scope,
+      UserService: UserService
       // place here mocked dependencies
     });
   }));
 
-  it('should attach returned users to the scope', function () {
+  it('getLunchGroups should call getLunchGroups service function', function () {
     scope.getLunchGroups();
-    expect(scope.lunchGroups.length).toBe(mockUserData.length);
+    expect(getLunchGroupsCallCount).toBe(1);
   });
 });
