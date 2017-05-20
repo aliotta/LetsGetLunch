@@ -8,13 +8,13 @@
  * Controller of the appartmentListLunchApp
  */
 angular.module('appartmentListLunchApp')
-.controller('MainCtrl', function ($scope, ApiCalls) {
-  $scope.lunchGroups = [[{firstName: 'CLIENT', lastName: 'SIDE'}, {firstName: 'Rob', lastName: 'W'}], [{firstName: 'Peter', lastName: 'Parker'},{firstName: 'Marquis', lastName: 'L'}],[{firstName: 'Mary', lastName: 'K'},{firstName: 'Beth', lastName: 'B'}, {firstName: 'Sam', lastName: 'Smith'}]];
+.controller('MainCtrl', function ($scope, UserService) {
+  $scope.userService = UserService;
   $scope.getLunchGroups = function(){
-    ApiCalls.doApiCall('user/random', 'GET')
-    .then(function(res){
-      $scope.lunchGroups = res.data;
-    });
+    $scope.userService.getLunchGroups()
+    .catch(function(){
+      alert('There was an error processing your request');
+    })
   }
 });
 

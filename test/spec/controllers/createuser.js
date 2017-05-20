@@ -17,7 +17,4 @@ describe('Controller: CreateuserCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(CreateuserCtrl.awesomeThings.length).toBe(3);
-  });
 });
