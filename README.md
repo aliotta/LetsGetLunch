@@ -1,6 +1,7 @@
-# appartment-list-lunch-app
+# Lets Get Lunch
+An application to assit people to assemble in random groupings. Sorts a group of users into buckets of maximum size 5 and minimum size 3. Users can readily be added to the list via the create user page.
 
-Built using yeoman angular-generator with a node.js server and a postgres database.
+Built using angularjs and twitter bootstrap with a node.js server and a postgres database.
 Testing of the front end code was completed using karma and backend code using mocha.
 
 ## Build & development
