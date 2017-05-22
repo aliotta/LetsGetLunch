@@ -3,7 +3,7 @@
   <div class='row'>
     <div ng-repeat="lunchGroup in userService.lunchGroups" class='col-md-4'>
       <h2>Group {{$index + 1}}</h2>
-      <div ng-repeat="person in lunchGroup">{{person.firstName}} {{person.lastName}}</div>
+      <div ng-repeat="person in lunchGroup">{{person.firstName}} {{person.lastName}} team {{person.team}}</div>
     </div>
   </div>
 </div>
