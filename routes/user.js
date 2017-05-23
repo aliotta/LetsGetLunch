@@ -19,11 +19,11 @@ module.exports = function (app, express) {
     });
 
     api.post('/create', function(req, res) {
-        if(!req.body.firstName || !req.body.lastName){
+        if(!req.body.firstName || !req.body.lastName || !req.body.team){
             res.status(400).json({error: 'Malformed request.'})
             return;
         }
-        userController.create({first_name: req.body.firstName, last_name: req.body.lastName})
+        userController.create({first_name: req.body.firstName, last_name: req.body.lastName, team: req.body.team})
         .then((userGroups) => {
             res.status(200).json(userGroups);
         })

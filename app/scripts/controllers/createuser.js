@@ -9,8 +9,8 @@
  */
 angular.module('appartmentListLunchApp')
 .controller('CreateUserCtrl', function ($scope, ApiCalls) {
-  $scope.createUser = function(firstName, lastName){
-    ApiCalls.doApiCall('user/create', 'POST', {firstName: firstName, lastName: lastName})
+  $scope.createUser = function(firstName, lastName, team){
+    ApiCalls.doApiCall('user/create', 'POST', {firstName: firstName, lastName: lastName, team: team})
     .then(function(res){
       alert('creation sucessful');      
     })
