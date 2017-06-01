@@ -14,9 +14,10 @@ describe('User Controller Unit', function() {
     var userController;
     var sandbox = sinon.sandbox.create();
     describe('getRandom', function() {
+        var mockUser = {firstName: 'Robert', lastName: 'Redford', available: true};
 
-        function testSize(size){
-            var mockUser = {firstName: 'Robert', lastName: 'Redford'};
+
+        function testSize(size, available){
             var mockUserData = [];
             for (var i = 0; i < size; i++) {
                 mockUserData.push(mockUser);
@@ -38,24 +39,54 @@ describe('User Controller Unit', function() {
                 return returnValue
             });
             userController = new UserController(app);
-            userController.getRandom()
+            return userController.getRandom()
             .then(function(users){
                 //check how many buckets we have
-                expect(users.length).to.equal(Math.ceil(size/5))
+                if (!available) {
+                    console.log("unavailable", available, users)
+
+                    expect(users.length === 0 ).to.equal(true);
+                }
                 for (var i = 0; i < users.length; i++) {
+                    expect(users.length).to.equal(Math.ceil(size/5))
+
                     //check that each bucket fits the size requirement
-                    expect(users[i].length >= 3).to.equal(true);
-                    expect(users[i].length <= 5).to.equal(true);
+                    if(available){
+                        console.log("available", available)
+                        expect(users[i].length >= 3).to.equal(true);
+                        expect(users[i].length <= 5).to.equal(true);
+                    }
+                    else {
+                        throw new Error('how did we even get here');
+                    }
+                    
                 };
             });
         }
 
+        afterEach(function(){
+            mockUser = {firstName: 'Robert', lastName: 'Redford', available: true};
+        });
+
         it('getRandom returns groups of maximum size 5 and minimum size 3 when there are enough users for one group', function() {
+            var promises = [];
+            var sizesToTest = 5;
+            //start test at 3 because this is the minimum user size to meet the size requirments
+            for (var i = 3; i < sizesToTest; i++) {
+                promises.push(testSize.bind(null, i, true));
+            };
+            return Promise.mapSeries(promises, function(promise){
+                return promise();
+            });
+        });
+
+        it('getRandom scrubs out unavailable users', function() {
+            mockUser = {firstName: 'Robert', lastName: 'Redford', available: false};
             var promises = [];
             var sizesToTest = 40;
             //start test at 3 because this is the minimum user size to meet the size requirments
             for (var i = 3; i < sizesToTest; i++) {
-                promises.push(testSize.bind(null, i));
+                promises.push(testSize.bind(null, i, false));
             };
             return Promise.mapSeries(promises, function(promise){
                 return promise();

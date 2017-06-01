@@ -87,11 +87,11 @@ function createTables (opts) {
 
 function seedDatabase (){
   var users = [
-    {last_name: 'Adams', first_name:'John' },
-    {last_name: 'Adams', first_name:'John Quincy' },
-    {last_name: 'Arthur', first_name:'Chester Alan' },
-    {last_name: 'Buchanan', first_name:'James' },
-    {last_name: 'Bush', first_name:'George' },
+    {last_name: 'Adams', first_name:'John' , available: true},
+    {last_name: 'Adams', first_name:'John Quincy' , available: true},
+    {last_name: 'Arthur', first_name:'Chester Alan' , available: true},
+    {last_name: 'Buchanan', first_name:'James' , available: true},
+    {last_name: 'Bush', first_name:'George', available: true },
     {last_name: 'Bush', first_name: 'George W.' },
     {last_name: 'Carter', first_name:'Jimmy' },
     {last_name: 'Cleveland', first_name:'Grover' },
