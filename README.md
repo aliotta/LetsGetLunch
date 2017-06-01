@@ -1,4 +1,7 @@
 # Lets Get Lunch
+
+Hosted at: https://lets-get-food.herokuapp.com/#/
+
 An application to assit people to assemble in random groupings. Sorts a group of users into buckets of maximum size 5 and minimum size 3. Users can readily be added to the list via the create user page.
 
 Built using angularjs and twitter bootstrap with a node.js server and a postgres database.
