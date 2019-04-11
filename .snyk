@@ -1,0 +1,107 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.3
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - grunt-contrib-connect > connect > body-parser > debug:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > compression > debug:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > express-session > debug:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > morgan > debug:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > serve-index > debug:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > serve-static > send > debug:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > connect-timeout > debug:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:hawk:20160119':
+    - grunt-google-cdn > google-cdn > bower > bower-registry-client > request > hawk:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-google-cdn > google-cdn > bower > request > hawk:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:http-signature:20150122':
+    - grunt-google-cdn > google-cdn > bower > bower-registry-client > request > http-signature:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-google-cdn > google-cdn > bower > request > http-signature:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:lodash:20180130':
+    - grunt-usemin > lodash:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-jscs > jscs > xmlbuilder > lodash:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:mime:20170907':
+    - grunt-contrib-connect > connect > serve-static > send > mime:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-google-cdn > google-cdn > bower > request > form-data > mime:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:minimatch:20160620':
+    - grunt-google-cdn > google-cdn > bower > glob > minimatch:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:ms:20170412':
+    - grunt-contrib-connect > connect > connect-timeout > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > morgan > debug > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > express-session > debug > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > compression > debug > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > serve-index > debug > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > body-parser > debug > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > connect-timeout > debug > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > serve-static > send > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > serve-static > send > debug > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > serve-favicon > ms:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:negotiator:20160616':
+    - grunt-contrib-connect > connect > compression > accepts > negotiator:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-connect > connect > serve-index > accepts > negotiator:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:qs:20140806-1':
+    - grunt-contrib-watch > tiny-lr-fork > qs:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:request:20160119':
+    - grunt-google-cdn > google-cdn > bower > bower-registry-client > request:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-google-cdn > google-cdn > bower > request:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:semver:20150403':
+    - grunt-google-cdn > google-cdn > semver:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-google-cdn > google-cdn > bower > semver:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-google-cdn > google-cdn > bower > update-notifier > semver-diff > semver:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:shell-quote:20160621':
+    - grunt-google-cdn > google-cdn > bower > shell-quote:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:tunnel-agent:20170305':
+    - grunt-google-cdn > google-cdn > bower > request > tunnel-agent:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-google-cdn > google-cdn > bower > bower-registry-client > request > tunnel-agent:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-build > download > caw > tunnel-agent:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-build > download > caw > tunnel-agent:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-build > download > caw > tunnel-agent:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-gifsicle > gifsicle > bin-wrapper > download > caw > tunnel-agent:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-jpegtran > jpegtran-bin > bin-wrapper > download > caw > tunnel-agent:
+        patched: '2019-04-11T06:12:28.035Z'
+    - grunt-contrib-imagemin > imagemin > imagemin-optipng > optipng-bin > bin-wrapper > download > caw > tunnel-agent:
+        patched: '2019-04-11T06:12:28.035Z'
+  'npm:uglify-js:20151024':
+    - grunt-google-cdn > google-cdn > bower > handlebars > uglify-js:
+        patched: '2019-04-11T06:12:28.035Z'
