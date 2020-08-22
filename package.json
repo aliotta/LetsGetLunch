@@ -2,7 +2,7 @@
   "name": "appartmentlistlunchapp",
   "private": true,
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.3.0",
     "jasmine-core": "^2.6.2",
     "karma": "^1.7.0",
     "karma-jasmine": "^1.1.0",
@@ -22,7 +22,7 @@
     "body-parser": "^1.17.2",
     "bower": "^1.8.0",
     "express": "^4.15.3",
-    "grunt": "0.4.5",
+    "grunt": "1.3.0",
     "grunt-cli": "1.2.0",
     "knex": "^0.13.0",
     "lodash": "^4.17.4",
