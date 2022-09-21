@@ -53,6 +53,6 @@
     "grunt-postcss": "^0.5.5",
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",
-    "grunt-wiredep": "^2.0.0"
+    "grunt-wiredep": "^3.0.0"
   }
 }
